@@ -3,7 +3,7 @@ using MediatR;
 
 namespace JewelleryStore.Application
 {
-    public class GoldPriceQuery : GoldPriceMessage, IRequest<float>
+    public class UserDetailsQuery: UserMessage, IRequest<UserMessage>
     {
     }
 }

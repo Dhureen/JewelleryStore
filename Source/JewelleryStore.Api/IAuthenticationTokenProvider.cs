@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JewelleryStore.Model
+namespace JewelleryStore.Infrastructure
 {
-     public class GoldPriceMessage
+    interface IAuthenticationTokenProvider
     {
-        public float Price { get; set; }
     }
 }

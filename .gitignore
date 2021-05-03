@@ -20,3 +20,7 @@
 /Source/JewelleryStore.Api/.vs
 /Source/JewelleryStore.Api/bin/Debug/net5.0
 /Source/JewelleryStore.Api/obj
+/Source/JewelleryStore.EntityModel/bin/Debug/net5.0
+/Source/JewelleryStore.EntityModel/obj
+/Source/JewelleryStore.Infrastructure/bin/Debug/net5.0
+/Source/JewelleryStore.Infrastructure/obj

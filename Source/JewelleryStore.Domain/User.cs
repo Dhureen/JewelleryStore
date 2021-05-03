@@ -14,9 +14,9 @@ namespace JewelleryStore.Domain
             DiscountPercentage = Type == UserType.Privileged ? discountPercentage : 0;
         }
 
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int DiscountPercentage { get; set; }
-        public UserType Type { get; set; }
+        public int Id { get; }
+        public string Name { get;}
+        public int DiscountPercentage { get;}
+        public UserType Type { get;}
     }
 }

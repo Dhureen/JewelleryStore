@@ -7,6 +7,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MediatR;
 using Jewellery.DataAccess;
+using JewelleryStore.EntityModel;
+using Microsoft.EntityFrameworkCore;
+using JewelleryStore.Infrastructure;
 
 namespace JewelleryStore.Api
 {
@@ -28,9 +31,12 @@ namespace JewelleryStore.Api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "JewelleryStore", Version = "v1" });
             });
 
-            services.AddMediatR(new[] { typeof(GoldPriceQuery).Assembly});
+            services.AddMediatR(new[] { typeof(ComputeGoldPriceQuery).Assembly});
+            services.AddAutoMapper(typeof(MappingProfile));
             services.AddScoped<IUserDataAccess, UserDataAccess>();
-            services.AddScoped<IUserDomainFactory, UserDomainFactory>();
+            services.AddScoped<IUserDomainFactory, UserDomainFactory>();         
+            services.AddSingleton<IApplicationContext, ApplicationContext>();
+            services.AddDbContextFactory<JewelleryStoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("mssql")));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

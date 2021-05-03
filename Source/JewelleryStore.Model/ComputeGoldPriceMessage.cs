@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace JewelleryStore.Model
 {
-     public class GoldPriceMessage
+     public class ComputeGoldPriceMessage
     {
-        public float Price { get; set; }
+        public int WeightInGrams { get; set; }
+        public int RatePerGram { get; set; }
     }
 }

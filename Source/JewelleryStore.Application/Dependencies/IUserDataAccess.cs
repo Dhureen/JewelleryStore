@@ -6,9 +6,9 @@ namespace JewelleryStore.Application
 {
     public interface IUserDataAccess
     {
-        Task<bool> Create(User user);
+        Task<int> Create(User user);
         Task<UserMessage> Details(int id);
-        Task<bool> Update(User user);
-        Task<bool> Delete(int id);
+        Task<int> Update(User user);
+        Task Delete(int id);
     }
 }
