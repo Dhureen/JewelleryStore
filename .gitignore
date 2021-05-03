@@ -6,3 +6,17 @@
 /.vs/slnx.sqlite-journal
 /.vs/slnx.sqlite
 /.vs/JewelleryStore/v16
+/Source/.vs/JewelleryStore/v16/.suo
+/Source/obj
+/Source/Jewellery.DataAccess/obj
+/Source/Jewellery.DataAccess/bin/Debug/net5.0
+/Source/JewelleryStore.Application/obj
+/Source/JewelleryStore.Application/bin/Debug/net5.0
+/Source/JewelleryStore.Domain/obj
+/Source/JewelleryStore.Domain/bin/Debug/net5.0
+/Source/JewelleryStore.Model/obj
+/Source/JewelleryStore.Model/bin/Debug/net5.0
+/Source/.vs/JewelleryStore
+/Source/JewelleryStore.Api/.vs
+/Source/JewelleryStore.Api/bin/Debug/net5.0
+/Source/JewelleryStore.Api/obj
