@@ -16,9 +16,10 @@ This ensures that the core business rules are developed without depending on the
 5. API - provides endpoints for application service
  
 # Requirements
-1. .NET 5 SDK
-2. MSSQL server
-3. Visual Studio 2019
+1. Windows 10
+2. .NET 5 SDK
+3. MSSQL server
+4. Visual Studio 2019
 
 # Steps to run app
 1. Clone the solution to local workspace
