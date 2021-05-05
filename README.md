@@ -22,9 +22,9 @@ This ensures that the core business rules are developed without depending on the
 
 # Steps to run app
 1. Clone the solution to local workspace
-2. Run the database script DatabaseSetup.sql
-3. Replace the connection string in appsettings.json i.e. ConnectionStrings.mssql with your local mssql connection string.
-4. Run the solution using visual studio IIS Express.
+2. Run the database script DatabaseSetup.sql available in the root folder.
+3. Replace the connection string in appsettings.json in the JewellleryStore.API folder i.e. ConnectionStrings.mssql with your local mssql connection string.
+4. Run the solution JewellleryStore.API.sln using visual studio IIS Express.
 5. Application will be hosted on https://localhost:44303
 
 # Postman collection
