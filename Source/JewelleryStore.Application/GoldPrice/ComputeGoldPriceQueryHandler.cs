@@ -9,19 +9,16 @@ namespace JewelleryStore.Application
     {
         private IApplicationContext _applicationContext;
         private IUserDataAccess _userDataAccess;
-        private IUserDomainFactory _userFactory;
 
-        public ComputeGoldPriceQueryHandler(IApplicationContext applicationContext, IUserDataAccess userDataAccess, IUserDomainFactory userFactory)
+        public ComputeGoldPriceQueryHandler(IApplicationContext applicationContext, IUserDataAccess userDataAccess)
         {
             _applicationContext = applicationContext;
             _userDataAccess = userDataAccess;
-            _userFactory = userFactory;
         }
 
         public async Task<GoldPriceMessage> Handle(ComputeGoldPriceQuery query, CancellationToken cancellationToken)
         {
-            var userMessage = await _userDataAccess.Details(_applicationContext.CurrentUserId);
-            var user = await _userFactory.Get(userMessage);
+            var user = await _userDataAccess.Details(_applicationContext.CurrentUserId);
             return new GoldPriceMessage() { Price = ComputeTotalPrice(query.RatePerGram, query.WeightInGrams, user.DiscountPercentage) };
         }
 

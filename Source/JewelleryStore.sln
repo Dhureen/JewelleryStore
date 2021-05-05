@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JewelleryStore.Api", "Jewel
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JewelleryStore.EntityModel", "JewelleryStore.EntityModel\JewelleryStore.EntityModel.csproj", "{24111388-B60A-4F91-AAF5-CDAC9F0EA58C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewelleryStore.UnitTests", "JewelleryStore.UnitTests\JewelleryStore.UnitTests.csproj", "{DDE6BA23-A43B-47D2-8765-563268EDE190}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{24111388-B60A-4F91-AAF5-CDAC9F0EA58C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24111388-B60A-4F91-AAF5-CDAC9F0EA58C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24111388-B60A-4F91-AAF5-CDAC9F0EA58C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDE6BA23-A43B-47D2-8765-563268EDE190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE6BA23-A43B-47D2-8765-563268EDE190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE6BA23-A43B-47D2-8765-563268EDE190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE6BA23-A43B-47D2-8765-563268EDE190}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

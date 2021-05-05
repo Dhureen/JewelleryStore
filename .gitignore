@@ -24,3 +24,5 @@
 /Source/JewelleryStore.EntityModel/obj
 /Source/JewelleryStore.Infrastructure/bin/Debug/net5.0
 /Source/JewelleryStore.Infrastructure/obj
+/Source/JewelleryStore.UnitTests/bin/Debug/net5.0
+/Source/JewelleryStore.UnitTests/obj
