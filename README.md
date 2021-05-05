@@ -16,7 +16,7 @@ This ensures that the core business rules are developed without depending on the
 5. API - provides endpoints for application service
  
 # Requirements
-1. .NET 5
+1. .NET 5 SDK
 2. MSSQL server
 3. Visual Studio 2019
 
