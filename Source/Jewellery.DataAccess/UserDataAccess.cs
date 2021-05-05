@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using JewelleryStore.Application;
 using JewelleryStore.Domain;
-using JewelleryStore.EntityModel;
+using JewelleryStore.DbModel;
 using JewelleryStore.Model;
 using Microsoft.EntityFrameworkCore;
 

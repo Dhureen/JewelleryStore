@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace JewelleryStore.EntityModel
+namespace JewelleryStore.DbModel
 {
     public partial class JewelleryStoreContext : DbContext
     {

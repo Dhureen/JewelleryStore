@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jewellery.DataAccess", "Jew
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JewelleryStore.Api", "JewelleryStore.Api\JewelleryStore.Api.csproj", "{97B8CDA0-D70C-4AAA-BC55-4F7FE6289358}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JewelleryStore.EntityModel", "JewelleryStore.EntityModel\JewelleryStore.EntityModel.csproj", "{24111388-B60A-4F91-AAF5-CDAC9F0EA58C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewelleryStore.UnitTests", "JewelleryStore.UnitTests\JewelleryStore.UnitTests.csproj", "{DDE6BA23-A43B-47D2-8765-563268EDE190}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JewelleryStore.DbModel", "JewelleryStore.DbModel\JewelleryStore.DbModel.csproj", "{3CF53A6E-E75C-4E41-8273-23C733DD5A40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,14 +43,14 @@ Global
 		{97B8CDA0-D70C-4AAA-BC55-4F7FE6289358}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97B8CDA0-D70C-4AAA-BC55-4F7FE6289358}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97B8CDA0-D70C-4AAA-BC55-4F7FE6289358}.Release|Any CPU.Build.0 = Release|Any CPU
-		{24111388-B60A-4F91-AAF5-CDAC9F0EA58C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{24111388-B60A-4F91-AAF5-CDAC9F0EA58C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{24111388-B60A-4F91-AAF5-CDAC9F0EA58C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{24111388-B60A-4F91-AAF5-CDAC9F0EA58C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DDE6BA23-A43B-47D2-8765-563268EDE190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DDE6BA23-A43B-47D2-8765-563268EDE190}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDE6BA23-A43B-47D2-8765-563268EDE190}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDE6BA23-A43B-47D2-8765-563268EDE190}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CF53A6E-E75C-4E41-8273-23C733DD5A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF53A6E-E75C-4E41-8273-23C733DD5A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF53A6E-E75C-4E41-8273-23C733DD5A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF53A6E-E75C-4E41-8273-23C733DD5A40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

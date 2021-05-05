@@ -26,3 +26,5 @@
 /Source/JewelleryStore.Infrastructure/obj
 /Source/JewelleryStore.UnitTests/bin/Debug/net5.0
 /Source/JewelleryStore.UnitTests/obj
+/Source/JewelleryStore.DbModel/obj
+/Source/JewelleryStore.DbModel/bin/Debug/net5.0

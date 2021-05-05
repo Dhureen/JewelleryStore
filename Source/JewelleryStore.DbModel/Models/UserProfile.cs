@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace JewelleryStore.EntityModel
+namespace JewelleryStore.DbModel
 {
     public partial class UserProfile
     {

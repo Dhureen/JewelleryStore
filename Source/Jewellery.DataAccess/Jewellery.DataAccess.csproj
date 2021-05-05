@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\JewelleryStore.Application\JewelleryStore.Application.csproj" />
+    <ProjectReference Include="..\JewelleryStore.DbModel\JewelleryStore.DbModel.csproj" />
     <ProjectReference Include="..\JewelleryStore.EntityModel\JewelleryStore.EntityModel.csproj" />
   </ItemGroup>
 

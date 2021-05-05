@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using JewelleryStore.Domain;
-using JewelleryStore.EntityModel;
+using JewelleryStore.DbModel;
 using JewelleryStore.Model;
 
 namespace Jewellery.DataAccess

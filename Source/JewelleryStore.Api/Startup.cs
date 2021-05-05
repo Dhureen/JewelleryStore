@@ -7,14 +7,13 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MediatR;
 using Jewellery.DataAccess;
-using JewelleryStore.EntityModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
-using System.Collections.Generic;
 using JewelleryStore.Model;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using JewelleryStore.DbModel;
 
 namespace JewelleryStore.Api
 {
