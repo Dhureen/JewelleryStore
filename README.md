@@ -2,6 +2,8 @@
 An application for a jewellery store for estimating gold prices.
 The application is organised in a domain-driven and clean architechture design.
 The API's are secured using the JWT authentication scheme.
+The following diagram illustrates the dependencies between various application components.
+The inner layers are totally independant from the outer layers which are generally technology related. This ensures that the core business rules are developed without depending on the API or storage technologies.
 ![image](https://user-images.githubusercontent.com/9382122/117103949-ed221480-ad98-11eb-8248-954273d46191.png)
 
 # Requirements
