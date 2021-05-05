@@ -1,5 +1,5 @@
 # JewelleryStore
-An application for a jewellery store for estimating gold prices.
+An application for a jewellery store to estimate gold prices.
 The application is organised in a domain-driven and clean architechture design.
 The API's are secured using the JWT authentication scheme.
 The following diagram illustrates the dependencies between various application components.
