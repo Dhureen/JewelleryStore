@@ -1,6 +1,20 @@
 # JewelleryStore
-An application for a jewellery store for estimating gold prices.
+An application for a jewellery store to estimate gold prices.
+The application is organised in a domain-driven and clean architechture design.
+The API's are secured using the JWT authentication scheme.
+The Entity framework core is used for data access.
+The following diagram illustrates the dependencies between various application components.
+The inner layers are totally independant from the outer layers which are generally technology related.
+This ensures that the core business rules are developed without depending on the API or storage technologies.
 
+![image](https://user-images.githubusercontent.com/9382122/117107826-de8b2b80-ad9f-11eb-9b51-8707f2836c12.png)
+
+1. Domain - contains core business rules.
+2. Model - contains the classes used for representing the data to API consumers.
+3. DbModel - contains classes used for interacting with database.
+4. Application - Handles application service requests
+5. API - provides endpoints for application service
+ 
 # Requirements
 1. .NET 5
 2. SQl Database
@@ -18,3 +32,11 @@ https://www.getpostman.com/collections/a8f45cf7c923410da80a
 
 1. Import the shared link into postman through File->Import->Link-> paste link
 2. The link imports the collection - JewelleryStore API
+3. Test cases
+    i. Unknown user authentication
+   ii. Normal user authentication
+  iii. Privileged user authentication
+   iv. Get gold price with authentication
+    v. Get gold price without authentication
+
+
