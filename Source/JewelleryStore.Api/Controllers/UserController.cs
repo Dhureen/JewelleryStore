@@ -31,9 +31,11 @@ namespace JewelleryStore.Api.Controllers
             return await _mediator.Send(new UserDetailsQuery() { Id = id });
         }
 
+        [Route("id")]
         [HttpPut]
-        public async Task<int> UpdateUser([FromBody] CreateUserCommand query)
+        public async Task<int> UpdateUser(int id, [FromBody] UpdateUserCommand query)
         {
+            query.Id = id;
             return await _mediator.Send(query);
         }
 

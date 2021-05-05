@@ -2,12 +2,14 @@
 using JewelleryStore.Application;
 using JewelleryStore.Model;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JewelleryStore.Api.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
+    [Authorize]
     public class GoldPriceController : Controller
     {
         private IMediator _mediator;

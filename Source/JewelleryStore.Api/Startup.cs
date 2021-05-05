@@ -9,7 +9,12 @@ using MediatR;
 using Jewellery.DataAccess;
 using JewelleryStore.EntityModel;
 using Microsoft.EntityFrameworkCore;
-using JewelleryStore.Infrastructure;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
+using JewelleryStore.Model;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace JewelleryStore.Api
 {
@@ -24,7 +29,7 @@ namespace JewelleryStore.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -36,7 +41,24 @@ namespace JewelleryStore.Api
             services.AddScoped<IUserDataAccess, UserDataAccess>();
             services.AddScoped<IUserDomainFactory, UserDomainFactory>();         
             services.AddSingleton<IApplicationContext, ApplicationContext>();
+            services.AddSingleton<IAuthenticationTokenProvider, AuthenticationTokenProvider>();
+            services.AddSingleton<IAuthenticationTokenGenerator, AuthenticationTokenGenerator>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDbContextFactory<JewelleryStoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("mssql")));
+            services.Configure<AuthSettings>(Configuration.GetSection("AuthSettings"));
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options => {
+                    options.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["AuthSettings:Secret"])),
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
+                        ValidateLifetime = true,
+                        SaveSigninToken = true
+                    };
+                });
+                ;
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -48,9 +70,16 @@ namespace JewelleryStore.Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "JewelleryStore v1"));
             }
 
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

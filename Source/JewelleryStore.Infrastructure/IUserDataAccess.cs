@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using JewelleryStore.Domain;
 using JewelleryStore.Model;
 
-namespace JewelleryStore.Application
+namespace JewelleryStore.Infrastructure
 {
     public interface IUserDataAccess
     {
@@ -11,6 +11,6 @@ namespace JewelleryStore.Application
         Task<UserMessage> Details(int id);
         Task<int> Update(User user);
         Task Delete(int id);
-        Task<IEnumerable<UserMessage>> GetAll();
+        Task<IEnumerable<UserMessage>> Search(string query);
     }
 }

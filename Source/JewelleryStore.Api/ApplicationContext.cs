@@ -1,9 +1,15 @@
-﻿using JewelleryStore.Infrastructure;
+﻿using JewelleryStore.Application;
 
 namespace JewelleryStore.Api
 {
     public class ApplicationContext: IApplicationContext
     {
-        public int CurrentUserId => 2;
+        private readonly IAuthenticationTokenProvider _authenticationTokenProvider;
+        public ApplicationContext(IAuthenticationTokenProvider authenticationTokenProvider)
+        {
+            _authenticationTokenProvider = authenticationTokenProvider;
+        }
+
+        public int CurrentUserId => _authenticationTokenProvider.Token.Id;        
     }
 }

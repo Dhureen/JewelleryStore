@@ -6,8 +6,8 @@ namespace JewelleryStore.Domain
     {
         public User(int id, string name, int discountPercentage, UserType userType)
         {
-            if (id < 1 || string.IsNullOrEmpty(name))
-                throw new Exception();
+            if (string.IsNullOrEmpty(name))
+                throw new Exception($"{nameof(Name)} is empty");
             Id = id;
             Name = name;
             Type = userType;

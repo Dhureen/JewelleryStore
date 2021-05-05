@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace JewelleryStore.Model
+﻿namespace JewelleryStore.Model
 {
     public class UserMessage
     {
@@ -9,5 +7,6 @@ namespace JewelleryStore.Model
         public string Name { get; set; }
         public int DiscountPercentage { get; set; }
         public UserTypeMessage Type { get; set; }
+        public string Password { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -26,10 +26,10 @@ namespace Jewellery.DataAccess
             using (var context = _contextFactory.CreateDbContext())
             {
 
-                context.UserProfiles.Add(_mapper.Map<UserProfile>(user) );
-                return await Task.FromResult(context.SaveChanges());
+                var userProfile = context.UserProfiles.Add(_mapper.Map<UserProfile>(user));
+                userProfile.Property(x => x.Id).IsTemporary = true;
+                return await context.SaveChangesAsync();
             }
-
         }
 
         public async Task Delete(int id)
@@ -38,7 +38,7 @@ namespace Jewellery.DataAccess
             {
                 var userProfile = context.UserProfiles.FirstOrDefault(x => x.Id == id);
                 context.Remove(userProfile);
-                await Task.FromResult(context.SaveChanges());
+                await context.SaveChangesAsync();
             }
         }
 
@@ -51,13 +51,27 @@ namespace Jewellery.DataAccess
             }
         }
 
+        public async Task<IEnumerable<UserMessage>> GetAll()
+        {
+            await Task.CompletedTask;
+            using (var context = _contextFactory.CreateDbContext())
+            {
+                return context.UserProfiles.Select(x => _mapper.Map<UserMessage>(x)).ToList();
+            }
+        }
+
         public async Task<int> Update(User user)
         {
             using (var context = _contextFactory.CreateDbContext())
             {
                 var userProfile = context.UserProfiles.FirstOrDefault(x => x.Id == user.Id);
-                userProfile = _mapper.Map<UserProfile>(user);
-                return await Task.FromResult(context.SaveChanges());
+                if (userProfile != null)
+                {
+                    _mapper.Map(user, userProfile);
+                    context.UserProfiles.Update(userProfile);
+                    return await context.SaveChangesAsync();
+                }
+                return await Task.FromResult(0);
             }
         }
     }

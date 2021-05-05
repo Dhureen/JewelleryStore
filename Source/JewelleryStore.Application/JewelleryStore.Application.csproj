@@ -6,11 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\JewelleryStore.Domain\JewelleryStore.Domain.csproj" />
-    <ProjectReference Include="..\JewelleryStore.Infrastructure\JewelleryStore.Infrastructure.csproj" />
     <ProjectReference Include="..\JewelleryStore.Model\JewelleryStore.Model.csproj" />
   </ItemGroup>
 
