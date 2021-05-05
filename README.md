@@ -17,14 +17,14 @@ This ensures that the core business rules are developed without depending on the
  
 # Requirements
 1. .NET 5
-2. SQl Database
+2. MSSQL server
 3. Visual Studio 2019
 
 # Steps to run app
 1. Clone the solution to local workspace
 2. Run the database script DatabaseSetup.sql
-3. Replace the connection string in appsettings.json i.e. ConnectionStrings.mssql with your local connection string.
-4. Run the solution using visual studio.
+3. Replace the connection string in appsettings.json i.e. ConnectionStrings.mssql with your local mssql connection string.
+4. Run the solution using visual studio IIS Express.
 5. Application will be hosted on https://localhost:44303
 
 # Postman collection
