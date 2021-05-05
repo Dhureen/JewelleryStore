@@ -23,11 +23,11 @@ https://www.getpostman.com/collections/a8f45cf7c923410da80a
 
 1. Import the shared link into postman through File->Import->Link-> paste link
 2. The link imports the collection - JewelleryStore API
-3. Test cases:
-  a. Unknown user authentication
-  b. Normal user authentication
-  c. Privileged user authentication
-  d. Get gold price with authentication
-  c. Get gold price without authentication
+3. Test cases
+    i. Unknown user authentication
+   ii. Normal user authentication
+  iii. Privileged user authentication
+   iv. Get gold price with authentication
+    v. Get gold price without authentication
 
 
