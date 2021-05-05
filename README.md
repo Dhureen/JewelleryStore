@@ -1,5 +1,7 @@
 # JewelleryStore
 An application for a jewellery store for estimating gold prices.
+The application is organised in a domain-driven and clean architechture design.
+The API's are secured using the JWT authentication scheme.
 
 # Requirements
 1. .NET 5
