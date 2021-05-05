@@ -33,12 +33,18 @@ namespace JewelleryStore.Api
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "JewelleryStore", Version = "v1" });
+                var securityScheme = GetSwaggerSecurityScheme();
+                c.AddSecurityDefinition(securityScheme.Reference.Id, securityScheme);
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {securityScheme, new string[] { }}
+                });
             });
 
-            services.AddMediatR(new[] { typeof(ComputeGoldPriceQuery).Assembly});
+            services.AddMediatR(new[] { typeof(ComputeGoldPriceQuery).Assembly });
             services.AddAutoMapper(typeof(MappingProfile));
             services.AddScoped<IUserDataAccess, UserDataAccess>();
-            services.AddScoped<IUserDomainFactory, UserDomainFactory>();         
+            services.AddScoped<IUserDomainFactory, UserDomainFactory>();
             services.AddSingleton<IApplicationContext, ApplicationContext>();
             services.AddSingleton<IAuthenticationTokenProvider, AuthenticationTokenProvider>();
             services.AddSingleton<IAuthenticationTokenGenerator, AuthenticationTokenGenerator>();
@@ -46,7 +52,8 @@ namespace JewelleryStore.Api
             services.AddDbContextFactory<JewelleryStoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("mssql")));
             services.Configure<AuthSettings>(Configuration.GetSection("AuthSettings"));
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options => {
+                .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+                {
                     options.TokenValidationParameters = new TokenValidationParameters()
                     {
                         ValidateIssuerSigningKey = true,
@@ -57,7 +64,25 @@ namespace JewelleryStore.Api
                         SaveSigninToken = true
                     };
                 });
-                ;
+            ;
+        }
+
+        private static OpenApiSecurityScheme GetSwaggerSecurityScheme()
+        {
+            return new OpenApiSecurityScheme
+            {
+                Name = "JWT Authentication",
+                Description = "Enter JWT Bearer token **_only_**",
+                In = ParameterLocation.Header,
+                Type = SecuritySchemeType.Http,
+                Scheme = "bearer",
+                BearerFormat = "JWT",
+                Reference = new OpenApiReference
+                {
+                    Id = JwtBearerDefaults.AuthenticationScheme,
+                    Type = ReferenceType.SecurityScheme
+                }
+            };
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -67,6 +92,7 @@ namespace JewelleryStore.Api
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "JewelleryStore v1"));
+
             }
 
             app.UseCors(x => x

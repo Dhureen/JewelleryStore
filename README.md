@@ -26,6 +26,9 @@ This ensures that the core business rules are developed without depending on the
 3. Replace the connection string in appsettings.json i.e. ConnectionStrings.mssql with your local connection string.
 4. Run the solution using visual studio.
 5. Application will be hosted on https://localhost:44303
+6. A swagger UI will be launched with list of all APIs.
+7. To test gold price API, swagger UI needs to be authorised with bearer token by opening the authorise box.
+9. Use { "username":"Normal","password":"Normal") or {"username":"Privileged","password":"Privileged"} in the authenticate request body and fetch the token.
 
 # Postman collection
 https://www.getpostman.com/collections/a8f45cf7c923410da80a
